@@ -1,0 +1,10 @@
+{
+    "lambda": {
+        "sslCertificateType": "Wildcard",
+        "sourceDir": "lambda/custom"
+    },
+    "local": {
+        "sslCertificateType": "Wildcard",
+        "uri": "{localUri}"
+    }
+}

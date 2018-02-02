@@ -1,0 +1,32 @@
+{
+    "author": {
+        "name": "Hearst Emerging Tech"
+    },
+    "bin": {
+        "ask": "bin/ask-deploy.js"
+    },
+    "bundleDependencies": false,
+    "dependencies": {
+        "ask-cli": "1.1.0",
+        "commander": "2.13.0",
+        "js-yaml": "3.10.0",
+        "semver": "5.5.0"
+    },
+    "deprecated": false,
+    "description": "Deploy wrapper for Alexa Skills Kit (ASK)",
+    "devDependencies": {},
+    "keywords": [
+        "ask",
+        "cli",
+        "deploy"
+    ],
+    "license": "Apache 2.0",
+    "name": "ask-deploy",
+    "scripts": {
+        "cover": "npm test && npm run cover-browser",
+        "cover-browser": "open coverage/lcov-report/index.html",
+        "test": "istanbul cover node_modules/mocha/bin/_mocha -u exports -R spec test/api/*-test.js",
+        "watch-test": "mocha test/**/*-test.js -w"
+    },
+    "version": "0.1.0"
+}
