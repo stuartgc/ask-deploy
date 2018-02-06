@@ -3,7 +3,7 @@
         "name": "Hearst Emerging Tech"
     },
     "bin": {
-        "ask": "bin/ask-deploy.js"
+        "ask-config": "bin/ask-deploy.js"
     },
     "bundleDependencies": false,
     "dependencies": {
