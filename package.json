@@ -3,16 +3,14 @@
         "name": "Hearst Emerging Tech"
     },
     "bin": {
-        "ask-config": "bin/ask-deploy.js"
+        "ask-deploy": "bin/ask-deploy.js"
     },
     "bundleDependencies": false,
     "dependencies": {
-        "ask-cli": "1.1.0",
         "commander": "2.13.0",
         "js-yaml": "3.10.0",
-        "node-cmd": "^3.0.0",
         "semver": "5.5.0",
-        "shelljs": "^0.8.1"
+        "shelljs": "0.8.1"
     },
     "deprecated": false,
     "description": "Deploy wrapper for Alexa Skills Kit (ASK)",
