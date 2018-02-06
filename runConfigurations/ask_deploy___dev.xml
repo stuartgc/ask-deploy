@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ask-deploy - dev" type="NodeJSConfigurationType" factoryName="Node.js" application-parameters="dev" path-to-node="$USER_HOME$/.nvm/versions/node/v6.10.2/bin/node" path-to-js-file="$PROJECT_DIR$/bin/ask-deploy.js" working-dir="$PROJECT_DIR$/../alexa-gh">
+    <method />
+  </configuration>
+</component>
