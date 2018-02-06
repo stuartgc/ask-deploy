@@ -23,10 +23,6 @@
     "license": "Apache 2.0",
     "name": "ask-deploy",
     "scripts": {
-        "cover": "npm test && npm run cover-browser",
-        "cover-browser": "open coverage/lcov-report/index.html",
-        "test": "istanbul cover node_modules/mocha/bin/_mocha -u exports -R spec test/api/*-test.js",
-        "watch-test": "mocha test/**/*-test.js -w"
     },
     "version": "0.1.0"
 }
