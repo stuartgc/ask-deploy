@@ -4,7 +4,7 @@ Creates needed config files and deploys using ask-cli `ask deploy`
 ### Install
 * `nvm use 6.10.2`
 * `npm install -g ask-cli`
-* `npm install -g git+ssh://github.com/Hearst-DD/ask-deploy.git#v0.1.0`
+* `npm install -g git+ssh://github.com/Hearst-DD/ask-deploy.git#v0.1.1`
 
 ### Setup
 * create  `config/env_name.yml`
