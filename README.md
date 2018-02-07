@@ -6,6 +6,16 @@ Creates needed config files and deploys using ask-cli `ask deploy`
 * `npm install -g ask-cli`
 * `npm install -g git+ssh://github.com/Hearst-DD/ask-deploy.git#v0.1.1`
 
+### Usage
+`ask-deploy ask-deploy <env> [options]`
+
+Options:
+````
+ -t, --target <target>  deploy "lambda", "model", "skill" or "all" (default: all)
+ -v, --version          output the version number of ask-deploy
+ -h, --help             output usage information
+````
+
 ### Setup
 * create  `config/env_name.yml`
     * Lambda:
