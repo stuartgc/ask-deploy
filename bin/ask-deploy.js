@@ -18,7 +18,7 @@ let configEnv = null,
 
 //TODO: add support for debug flag
 program
-.usage( 'ask-deploy <env> [options]' )
+.usage( '<env> [options]' )
 .description( "Deploy wrapper for Command Line Interface for Alexa Skill Management API" )
 .option( '-t, --' + c.OPTIONS.TARGET + ' <target>', 'deploy "lambda", "model", "skill" or "all"', /^(lambda|model|skill|all)$/i, 'all' )
 .option( '-P, --' + c.OPTIONS.PERSIST_FILES, 'do not delete generated files' )

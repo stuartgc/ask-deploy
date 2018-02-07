@@ -4,7 +4,7 @@ Creates needed config files and deploys using ask-cli `ask deploy`
 ### Install
 * `nvm use 6.10.2`
 * `npm install -g ask-cli`
-* `npm install -g git+ssh://github.com/Hearst-DD/ask-deploy.git#v0.1.1`
+* `npm install -g git+ssh://github.com/Hearst-DD/ask-deploy.git#v0.1.2`
 
 ### Usage
 `ask-deploy <env> [options]`
@@ -12,6 +12,7 @@ Creates needed config files and deploys using ask-cli `ask deploy`
 Options:
 ````
  -t, --target <target>  deploy "lambda", "model", "skill" or "all" (default: all)
+ -P, --persistFiles     do not delete generated files
  -v, --version          output the version number of ask-deploy
  -h, --help             output usage information
 ````
