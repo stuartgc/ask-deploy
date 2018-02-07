@@ -41,3 +41,4 @@ Creates needed config files and deploys using ask-cli `ask deploy`
         /models/en-US.json
         /skill.json
         ````
+* delete `.ask` directory
