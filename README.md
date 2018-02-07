@@ -7,7 +7,7 @@ Creates needed config files and deploys using ask-cli `ask deploy`
 * `npm install -g git+ssh://github.com/Hearst-DD/ask-deploy.git#v0.1.1`
 
 ### Usage
-`ask-deploy ask-deploy <env> [options]`
+`ask-deploy <env> [options]`
 
 Options:
 ````
