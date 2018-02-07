@@ -51,5 +51,8 @@ Options:
         .ask
         /models/en-US.json
         /skill.json
+        /config/*.yml
+        !/config/dev.yml
+        !/config/prod.yml
         ````
 * delete `.ask` directory
