@@ -8,31 +8,37 @@ if ( !require( "semver" ).gte( process.version, "6.10.2")) {
     return;
 }
 
-const deploy = require( "./../lib/deploy/deploy" ),
-      program = require( "commander" );
+const c = require( "./../lib/utils/constants" ),
+      deploy = require( "./../lib/deploy/deploy" ),
+      program = require( "commander" ),
+      utils = require( "./../lib/utils/utils" );
 
 let configEnv = null,
-    deployTarget = null;
+    options = null;
 
 //TODO: add support for debug flag
 program
 .usage( 'ask-deploy <env> [options]' )
 .description( "Deploy wrapper for Command Line Interface for Alexa Skill Management API" )
-.option( '-t, --target <target>', 'deploy "lambda", "model", "skill" or "all"', /^(lambda|model|skill|all)$/i, 'all' )
+.option( '-t, --' + c.OPTIONS.TARGET + ' <target>', 'deploy "lambda", "model", "skill" or "all"', /^(lambda|model|skill|all)$/i, 'all' )
+.option( '-P, --' + c.OPTIONS.PERSIST_FILES, 'do not delete generated files' )
 .option( "-v, --version", "output the version number of ask-deploy" , () => {
     console.log( require( "../package.json" ).version );
 
     process.exit( 0 );
 } )
-.action( function( env, options ) {
+.action( function( env, opts ) {
     configEnv = env;
 
-    deployTarget = options.target;// || "all";
+    options = {
+        persist: utils.get( c.OPTIONS.PERSIST_FILES, opts ),
+        target: utils.get( c.OPTIONS.TARGET, opts )
+    };
 } )
 .parse( process.argv );
 
-if ( configEnv && deployTarget ) {
-    deploy.deploy( configEnv, deployTarget );
+if ( configEnv && options.target ) {
+    deploy.deploy( configEnv, options );
 } else {
     program.outputHelp();
 
