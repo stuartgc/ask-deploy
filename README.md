@@ -27,10 +27,12 @@ Creates needed config files and deploys using ask-cli `ask deploy`
 * `models/en-US.json`
     * rename to `models/en-US.json.tpl`
     * update invocation to `"invocationName": "{skillInvocation}"`
+    * delete `models/en-US.env_name.json` files
 * `skill.json`
     * rename to `skill.json.tpl`
     * update name to `"name": "{skillName}"`
     * update endpoint to `"endpoint": {endpointObj}`
+     * delete `skill.env_name.json` files
 * `.gitignore`
     * add:
         ````
