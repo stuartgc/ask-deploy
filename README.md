@@ -4,7 +4,7 @@ Creates needed config files and deploys using ask-cli's `ask deploy`
 ### Install
 * `nvm use 6.10.2`
 * `npm install -g ask-cli`
-* `npm install -g ask-deploy.git`
+* `npm install -g ask-deploy`
 
 ### Usage
 `ask-deploy <env> [options]`
