@@ -40,6 +40,6 @@
     },
     "scripts": {
         "test": "mocha --recursive --reporter spec"
-    },  
+    },
     "version": "0.2.0"
 }
