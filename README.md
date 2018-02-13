@@ -1,10 +1,10 @@
 # ask-deploy
-Creates needed config files and deploys using ask-cli `ask deploy`
+Creates needed config files and deploys using ask-cli's `ask deploy`
 
 ### Install
-* `nvm use 6.10.2`
+* `nvm use 6.10.2` - latest version supported by Lambda 
 * `npm install -g ask-cli`
-* `npm install -g git+ssh://github.com/Hearst-DD/ask-deploy.git#v0.1.2`
+* `npm install -g ask-deploy`
 
 ### Usage
 `ask-deploy <env> [options]`

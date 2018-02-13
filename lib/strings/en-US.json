@@ -1,0 +1,38 @@
+{
+    "ERROR": {
+        "CLEANUP": "Cleanup Error --> ",
+        "DEPLOY": "Deploy Config Error --> ",
+        "MISSING": {
+            "ASK_CLI": "This script requires ask-cli (npm install -g ask-cli)",
+            "CONFIG": "Deployment config not found",
+            "ENV_OR_TARGET": "missing environment or target",
+            "MODEL_TEMPLATE": "Model Error --> ",
+            "SKILL_TEMPLATE": "Skill Error --> "
+        },
+        "NODE_VERSION": "Version of node.js doesn't meet minimum requirement.\nPlease ensure system has node.js version 6.10.2.",
+        "WRITE": {
+            "CONFIG": "Config Write Error --> ",
+            "MODEL": "Model Write Error --> ",
+            "SKILL": "Skill Write Error --> "
+        }
+    },
+    "INFO": {
+        "DESCRIPTION": "Deploy wrapper for Command Line Interface for Alexa Skill Management API",
+        "OPTIONS": {
+            "PERSIST": "do not delete generated files",
+            "TARGET": "deploy \"lambda\", \"model\", \"skill\" or \"all\"",
+            "VERSION": "output the version number of ask-deploy"
+        }
+    },
+    "STATUS": {
+        "CLEANUP": "\nRemoving generated files.",
+        "CREATED": {
+            "CONFIG": "Config successfully created\n",
+            "MODEL": "Model successfully created\n",
+            "SKILL": "Skill successfully created\n"
+        },
+        "DEPLOYING": "starting deploy...  be patient\n",
+        "PREPARING": "Preparing to deploy {env} to {target}\n",
+        "SUCCESS": "\nDeploy to {env} with target {target} was successfull."
+    }
+}
