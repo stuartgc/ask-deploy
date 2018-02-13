@@ -1,5 +1,5 @@
 # ask-deploy
-Creates needed config files and deploys using ask-cli's `ask deploy`
+Creates needed config files and deploys using Amazon's ask-cli `ask deploy`
 
 ### Install
 * `nvm use 6.10.2` - latest version supported by Lambda 

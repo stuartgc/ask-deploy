@@ -28,6 +28,7 @@
     "homepage": "https://github.com/Hearst-DD/ask-deploy#readme",
     "keywords": [
         "ask",
+        "ask-cli",
         "cli",
         "deploy"
     ],
