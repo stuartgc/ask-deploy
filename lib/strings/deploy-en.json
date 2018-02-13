@@ -1,0 +1,29 @@
+{
+    "ERROR": {
+        "CLEANUP": "Cleanup Error --> ",
+        "DEPLOY": "Deploy Config Error --> ",
+        "MISSING": {
+            "ASK_CLI": "This script requires ask-cli (npm install -g ask-cli)",
+            "CONFIG": "Deployment config not found",
+            "ENV_OR_TARGET": "missing environment or target",
+            "MODEL_TEMPLATE": "Model Error --> ",
+            "SKILL_TEMPLATE": "Skill Error --> "
+        },
+        "WRITE": {
+            "CONFIG": "Config Write Error --> ",
+            "MODEL": "Model Write Error --> ",
+            "SKILL": "Skill Write Error --> "
+        }
+    },
+    "STATUS": {
+        "CLEANUP": "\nRemoving generated files.",
+        "CREATED": {
+            "CONFIG": "Config successfully created\n",
+            "MODEL": "Model successfully created\n",
+            "SKILL": "Skill successfully created\n"
+        },
+        "DEPLOYING": "starting deploy...  be patient\n",
+        "PREPARING": "Preparing to deploy {env} to {target}\n",
+        "SUCCESS": "\nDeploy to {env} with target {target} was successfull."
+    }
+}
