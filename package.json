@@ -37,7 +37,6 @@
         "type": "git",
         "url": "git+https://github.com/Hearst-DD/ask-deploy.git"
     },
-    "scripts": {
-    },
-    "version": "0.1.2"
+    "scripts": {},
+    "version": "0.2.0"
 }
