@@ -43,7 +43,7 @@
         "url": "git+https://github.com/Hearst-DD/ask-deploy.git"
     },
     "scripts": {
-        "test": "mocha --recursive --reporter spec"
+        "test": "mocha --recursive --reporter spec ./test"
     },
     "version": "0.2.0"
 }

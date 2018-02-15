@@ -1,0 +1,5 @@
+---
+skillName: Lambda Skill
+skillInvocation: lambda skill
+skillId: amzn1.ask.skill.skillIdLocal
+lambdaArn: arn.lambdaPath
