@@ -24,8 +24,25 @@ describe( "DEPLOY UTILS", function() {
     let localConfig,
         lambdaConfig;
 
-    before( function() {
+    const fileExistsOrCreate = function( path ) {
+        let p = new Promise( function( resolve, reject ) {
+            const fileExists = fileUtils.checkForFile( WORKING_DIR + "/" + path );
 
+            if ( !fileExists ) {
+                fileUtils.write( path, JSON.stringify( { "foo": "bar" } ) )
+                .then( resolve )
+                .catch( ( err ) => {
+                    reject( err );
+                } );
+            } else {
+                resolve();
+            }
+        } );
+
+        return p;
+    };
+
+    before( function() {
         let p = new Promise( function( resolve, reject ) {
             fileUtils.readYml( c.PATH.CONFIG + ENV.LAMBDA )
             .then( ( config ) => {
@@ -139,31 +156,43 @@ describe( "DEPLOY UTILS", function() {
     } );
 
     describe( "deployUtils.cleanup", function() {
-        it( "Local - write local model file", function() {
-            return deployUtils.buildAndWriteSkill( localConfig )
+        beforeEach( function() {
+            let p = new Promise( function( resolve, reject ) {
+                fileExistsOrCreate( c.PATH.ASK_CONFIG + c.FILE.CONFIG )
+                .then( () => {
+                    return fileExistsOrCreate( c.PATH.MODEL + c.FILE.MODEL );
+                } )
+                .then( () => {
+                    return fileExistsOrCreate( c.FILE.SKILL );
+                } )
+                .then( resolve )
+                .catch( ( err ) => {
+                    reject( err );
+                } );
+            } );
+
+            return p;
+        } );
+
+        it( "Persist - generated files are not deleted", function() {
+            return deployUtils.cleanup( { persist: true } )
             .then( () => {
-                return fileUtils.read( WORKING_DIR + "/" + c.FILE.SKILL );
-            } )
-            .then( ( data ) => {
-                data = JSON.parse( data );
+                expect( fileUtils.checkForFile( WORKING_DIR + "/" + c.PATH.ASK_CONFIG + c.FILE.CONFIG ) ).to.be.true;
 
-                expect( utils.get( KEYS.NAME, data ) ).to.equal( localConfig.skillName );
+                expect( fileUtils.checkForFile( WORKING_DIR + "/" + c.PATH.MODEL + c.FILE.MODEL ) ).to.be.true;
 
-                expect( utils.get( KEYS.LOCAL_URI, data ) ).to.equal( localConfig.localUri );
+                expect( fileUtils.checkForFile( WORKING_DIR + "/" + c.FILE.SKILL ) ).to.be.true;
             } );
         } );
 
-        it( "Lambda - write lambda model file", function() {
-            return deployUtils.buildAndWriteSkill( lambdaConfig )
+        it( "Removed - generated files are deleted", function() {
+            return deployUtils.cleanup( {} )
             .then( () => {
-                return fileUtils.read( WORKING_DIR + "/" + c.FILE.SKILL );
-            } )
-            .then( ( data ) => {
-                data = JSON.parse( data );
+                expect( fileUtils.checkForFile( WORKING_DIR + "/" + c.PATH.ASK_CONFIG + c.FILE.CONFIG ) ).to.be.false;
 
-                expect( utils.get( KEYS.NAME, data ) ).to.equal( lambdaConfig.skillName );
+                expect( fileUtils.checkForFile( WORKING_DIR + "/" + c.PATH.MODEL + c.FILE.MODEL ) ).to.be.false;
 
-                expect( utils.get( KEYS.SOURCE_DIR, data ) ).to.equal( SOURCE_DIR );
+                expect( fileUtils.checkForFile( WORKING_DIR + "/" + c.FILE.SKILL ) ).to.be.false;
             } );
         } );
     } );
