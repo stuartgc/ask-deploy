@@ -5,6 +5,9 @@
     "bin": {
         "ask-deploy": "bin/ask-deploy.js"
     },
+    "bugs": {
+        "url": "https://github.com/Hearst-DD/ask-deploy/issues"
+    },
     "bundleDependencies": false,
     "contributors": [
         {
@@ -20,12 +23,13 @@
         "shelljs": "0.8.1"
     },
     "deprecated": false,
-    "description": "Deploy wrapper for Alexa Skills Kit (ASK)",
+    "description": "Deploy wrapper for Alexa Skills Kit (ASK) to easily switch environments.",
     "devDependencies": {
         "chai": "4.1.2",
         "mocha": "5.0.0",
         "sinon": "4.3.0"
     },
+    "homepage": "https://github.com/Hearst-DD/ask-deploy#readme",
     "keywords": [
         "ask",
         "ask-cli",
