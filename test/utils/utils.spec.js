@@ -3,8 +3,6 @@
 const utils = require( "./../../lib/utils/utils" );
 
 describe( "UTILS", function() {
-
-
     describe( "utils.errorCheckCallback", function() {
         it( "errorCheckCallback always returns a function", function() {
             let fn = function() {
@@ -31,6 +29,10 @@ describe( "UTILS", function() {
                 },
                 baz: undefined,
             };
+        } );
+
+        after( function() {
+            delete this.option;
         } );
 
         it( "verify we can get values with and without dot syntax", function() {
@@ -78,6 +80,141 @@ describe( "UTILS", function() {
 
         it( "returns false when no parameters are passed", function() {
             expect( utils.get() ).to.be.false;
+        } );
+    } );
+
+    describe( "utils.set", function() {
+        beforeEach( function() {
+            this.BAR = "bar";
+
+            this.option = {
+                foo: this.BAR,
+                bar: {},
+                baz: undefined,
+            };
+        } );
+
+        after( function() {
+            delete this.BAR;
+
+            delete this.option;
+        } );
+
+        it( "verify we can set values with and without dot syntax", function() {
+            utils.set( "foo", this.option, this.BAR );
+
+            expect( this.option.foo ).to.equal( this.BAR );
+
+            utils.set( "bar.baz", this.option, this.BAR );
+
+            expect( this.option.bar.baz ).to.equal( this.BAR );
+
+            utils.set( "baz.baz", this.option, this.BAR );
+
+            expect( this.option.baz.baz ).to.equal( this.BAR );
+        } );
+
+        it( "verify we can set undefined values with and without dot syntax", function() {
+            utils.set( "foo", this.option, undefined );
+
+            expect( this.option.foo ).to.be.undefined;
+
+            utils.set( "bar.baz", this.option, undefined );
+
+            expect( this.option.bar.baz ).to.be.undefined;;
+
+            utils.set( "baz.baz", this.option, undefined );
+
+            expect( this.option.baz.baz ).to.be.undefined;;
+        } );
+
+        it( "verify we can set null values with and without dot syntax", function() {
+            utils.set( "foo", this.option, null );
+
+            expect( this.option.foo ).to.be.null;
+
+            utils.set( "bar.baz", this.option, null );
+
+            expect( this.option.bar.baz ).to.be.null;
+
+            utils.set( "baz.baz", this.option, null );
+
+            expect( this.option.baz.baz ).to.be.null;
+        } );
+
+        it( "fail gracefully when key does not exist", function() {
+            const func = () => {
+                utils.set( null, this.option, this.BAR );
+            };
+
+            expect( func ).to.not.throw();
+        } );
+
+        it( "fail gracefully when source does not exist", function() {
+            const func = () => {
+                utils.set( "baz", null, this.BAR );
+            };
+
+            expect( func ).to.not.throw();
+        } );
+
+        it( "do not overwrite existing values", function() {
+            utils.set( "foo.baz", this.option, this.BAR );
+
+            expect( this.option.foo ).to.equal( this.BAR );
+        } );
+    } );
+
+    describe( "utils.replaceAll", function() {
+        beforeEach( function() {
+            this.templateStr = "foo {foo} baz {foo}";
+            this.replacedStr = "foo bar baz bar";
+
+            this.mapObj = {
+                "{foo}": "bar"
+            };
+        } );
+
+        after( function() {
+            delete this.templateStr;
+            delete this.replacedStr;
+            delete this.mapObj;
+        } );
+
+        it( "verify that all instances are replaced", function() {
+            expect( utils.replaceAll( this.templateStr, this.mapObj ) ).to.equal( this.replacedStr );
+        } );
+
+        it( "fail gracefully when string arg does not exist", function() {
+            const func = () => {
+                expect( utils.replaceAll( null, this.mapObj ) ).to.be.null;
+            };
+
+            expect( func ).to.not.throw();
+        } );
+
+        it( "fail gracefully when string arg is not a string", function() {
+            const func = () => {
+                expect( typeof utils.replaceAll( {}, this.mapObj ) ).to.equal( "object" );
+            };
+
+            expect( func ).to.not.throw();
+        } );
+
+        it( "fail gracefully when mapObj does not exist", function() {
+            const func = () => {
+                expect( utils.replaceAll( this.templateStr ) ).to.equal( this.templateStr );
+            };
+
+            expect( func ).to.not.throw();
+        } );
+
+        it( "fail gracefully when mapObj is not an object", function() {
+            const func = () => {
+                expect( utils.replaceAll( this.templateStr, this.replacedStr ) ).to.equal( this.templateStr );
+            };
+
+            expect( func ).to.not.throw();
         } );
     } );
 } );
