@@ -1,5 +1,7 @@
 "use strict";
 
+const env = require( "../env" )();
+
 const utils = require( "./../../lib/utils/utils" );
 
 describe( "UTILS", function() {

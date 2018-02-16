@@ -1,5 +1,7 @@
 "use strict";
 
+const env = require( "../env" )();
+
 const deploy = require( "./../../lib/deploy/deploy" );
 
 describe( "DEPLOY", function() {

@@ -44,8 +44,8 @@
         "url": "git+https://github.com/Hearst-DD/ask-deploy.git"
     },
     "scripts": {
-        "test": "mocha --recursive --reporter spec ./test",
-        "test-coverage": "nyc mocha --recursive --reporter spec ./test" && nyc report --reporter=html"
+        "test": "mocha --recursive --reporter spec",
+        "test-coverage": "nyc mocha --recursive --reporter spec && nyc report --reporter=html"
     },
     "version": "0.2.0"
 }

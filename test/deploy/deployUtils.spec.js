@@ -1,5 +1,7 @@
 "use strict";
 
+const env = require( "../env" )();
+
 const c = require( "./../../lib/utils/constants" ),
     deployUtils = require( "./../../lib/deploy/deployUtils" ),
     fileUtils = require( "./../../lib/utils/fileUtils" ),
