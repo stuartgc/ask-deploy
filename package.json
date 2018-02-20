@@ -24,7 +24,12 @@
     },
     "deprecated": false,
     "description": "Deploy wrapper for Alexa Skills Kit (ASK) to easily switch environments.",
-    "devDependencies": {},
+    "devDependencies": {
+        "chai": "4.1.2",
+        "mocha": "5.0.0",
+        "nyc": "11.4.1",
+        "sinon": "4.3.0"
+    },
     "homepage": "https://github.com/Hearst-DD/ask-deploy#readme",
     "keywords": [
         "ask",
@@ -38,6 +43,9 @@
         "type": "git",
         "url": "git+https://github.com/Hearst-DD/ask-deploy.git"
     },
-    "scripts": {},
+    "scripts": {
+        "test": "mocha --recursive --reporter spec",
+        "test-coverage": "nyc mocha --recursive --reporter spec && nyc report --reporter=html"
+    },
     "version": "0.2.0"
 }

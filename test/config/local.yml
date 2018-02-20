@@ -1,0 +1,5 @@
+---
+skillName: Local Skill
+skillInvocation: local skill
+skillId: amzn1.ask.skill.skillIdLocal
+localUri: https://localhost
