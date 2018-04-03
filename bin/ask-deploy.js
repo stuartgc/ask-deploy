@@ -3,7 +3,7 @@
 
 const str = require( "./../lib/strings/en-US" );
 
-if ( !require( "semver" ).eq( process.version, "6.10.2" ) ) {
+if ( !require( "semver" ).gte( process.version, "6.10.2" ) ) {
     console.log( str.ERROR.NODE_VERSION );
 
     return;
