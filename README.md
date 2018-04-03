@@ -2,7 +2,7 @@
 Creates needed config files and deploys using Amazon's ask-cli `ask deploy`
 
 ### Install
-* `nvm use 6.10.2` - latest version supported by Lambda 
+* `nvm use 8.10.0` - latest version supported by Lambda
 * `npm install -g ask-cli`
 * `npm install -g ask-deploy`
 
