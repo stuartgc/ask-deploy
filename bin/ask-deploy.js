@@ -23,6 +23,7 @@ program
 .description( str.INFO.DESCRIPTION )
 .option( '-t, --' + c.OPTIONS.TARGET + ' <target>', str.INFO.OPTIONS.TARGET, /^(lambda|model|skill|all)$/i, 'all' )
 .option( '-P, --' + c.OPTIONS.PERSIST_FILES, str.INFO.OPTIONS.PERSIST )
+.option( '-S, --' + c.OPTIONS.SKIP_AUDIO_VALIDATION, str.INFO.OPTIONS.SKIP_AUDIO_VALIDATION )
 .option( "-v, --version", str.INFO.OPTIONS.VERSION , () => {
     console.log( require( "../package.json" ).version );
 
@@ -33,6 +34,7 @@ program
 
     options = {
         persist: utils.get( c.OPTIONS.PERSIST_FILES, opts ),
+        skipAudioValidation: utils.get( c.OPTIONS.SKIP_AUDIO_VALIDATION, opts ),
         target: utils.get( c.OPTIONS.TARGET, opts )
     };
 } )

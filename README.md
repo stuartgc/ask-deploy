@@ -11,10 +11,11 @@ Creates needed config files and deploys using Amazon's ask-cli `ask deploy`
 
 Options:
 ````
- -t, --target <target>  deploy "lambda", "model", "skill" or "all" (default: all)
- -P, --persistFiles     do not delete generated files
- -v, --version          output the version number of ask-deploy
- -h, --help             output usage information
+ -t, --target <target>      deploy "lambda", "model", "skill" or "all" (default: all)
+ -P, --persistFiles         do not delete generated files
+ -S, --skipAudioValidation  skip audio file validation
+ -v, --version              output the version number of ask-deploy
+ -h, --help                 output usage information
 ````
 
 ### Setup
@@ -26,6 +27,7 @@ Options:
             skillInvocation: 
             skillId: 
             lambdaArn:
+            s3AudioPath:
         ````
     * Local:
         ````
@@ -34,6 +36,7 @@ Options:
             skillInvocation: 
             skillId: 
             localUri:
+            s3AudioPath
         ````
 * `models/en-US.json`
     * rename to `models/en-US.json.tpl`
