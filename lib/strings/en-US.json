@@ -11,7 +11,7 @@
             "SKILL_TEMPLATE": "Skill Error --> ",
             "S3_AUDIO_PATH": "Missing s3AudioPath in environment yml file"
         },
-        "NODE_VERSION": "Version of node.js doesn't meet minimum requirement.\nPlease ensure system has node.js version 6.10.2.",
+        "NODE_VERSION": "Version of node.js doesn't meet minimum requirement.\nPlease ensure system has node.js version 6.10.2 or greater",
         "WRITE": {
             "CONFIG": "Config Write Error --> ",
             "MODEL": "Model Write Error --> ",
