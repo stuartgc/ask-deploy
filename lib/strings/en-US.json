@@ -2,7 +2,7 @@
     "ERROR": {
         "CLEANUP": "Cleanup Error --> ",
         "DEPLOY": "Deploy Config Error --> ",
-        "AUDIO_FILES": "Audio file not found -->",
+        "AUDIO_FILES": "File does not exist",
         "MISSING": {
             "ASK_CLI": "This script requires ask-cli (npm install -g ask-cli)",
             "CONFIG": "Deployment config not found",
