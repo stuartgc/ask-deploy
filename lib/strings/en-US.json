@@ -9,7 +9,7 @@
             "ENV_OR_TARGET": "missing environment or target",
             "MODEL_TEMPLATE": "Model Error --> ",
             "SKILL_TEMPLATE": "Skill Error --> ",
-            "S3_AUDIO_PATH": "Missing s3AudioPath in environment yml file"
+            "AUDIO_URL_PREFIX": "Missing the audioUrlPrefix variable in the environment yml file"
         },
         "NODE_VERSION": "Version of node.js doesn't meet minimum requirement.\nPlease ensure system has node.js version 6.10.2 or greater",
         "WRITE": {
